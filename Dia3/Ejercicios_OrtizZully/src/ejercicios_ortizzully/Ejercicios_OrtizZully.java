@@ -226,9 +226,21 @@ public class Ejercicios_OrtizZully {
                 break;
                 
             case 18:
+                // Terminado 
                 // 18. Escribe un programa para calcular el MCD (Máximo Común Divisor) de dos números dados.
                 
+                System.out.println("Ingrese el primer numero: ");
+                int a = teclado.nextInt();
                 
+                System.out.println("Ingrese el segundo numero: ");
+                int b = teclado.nextInt();
+                
+                while (b != 0){
+                    int temp = b;
+                    b = a % b;
+                    a = temp;
+                    System.out.println(a);
+                }
                 
                 break;
                 
@@ -333,7 +345,25 @@ public class Ejercicios_OrtizZully {
             case 23:
                 // 23. Escribe un programa para verificar si un número es un Número Fuerte o no.
                 
+                System.out.println("Ingrese un numero: ");
+                String num5 = teclado.nextLine();
                 
+                int s = 0;
+                
+                for( int i=0; i<num5.length(); i++){
+                    int sep = num5.charAt(i) - '0';
+                    
+                    int sumFac = 1;
+                    for (int x=sep; x>0; x--){
+                        sumFac = sumFac*x;
+                    }
+                    s += sumFac;
+                }
+                if (s == Integer.parseInt(num5)){
+                    System.out.println(num5 + "Es un numero fuerte.");
+                } else {
+                    System.out.println(num5 + "No es un numero fuerte.");
+                }
                 
                 break;
             case 24:
@@ -433,17 +463,58 @@ public class Ejercicios_OrtizZully {
                 break;
             case 33:
                 
-                // 
+                // 33. Escribe un programa para convertir un número octal a binario.
+                
                 break;
             case 34:
+                
+                // 34. Escribe un programa para convertir un número octal a decimal.
                 break;
             case 35:
                 
                 // 35. Escribe un programa para convertir un número octal a hexadecimal.
                 break;
             case 36:
+                // 36. Escribe un programa para encontrar el complemento a 1 de un número en Java.
                 break;
             case 37:
+                // 37. Escribe un programa para encontrar el complemento a 2 de un número binario en Java.
+                break;
+                
+            case 38:
+                //38. Escribe un programa para imprimir la serie de Fibonacci hasta n términos.
+                break;
+            case 39:
+                // 39. Escribe un programa para verificar si un número es un Número Fuerte o no.
+                break;
+            case 40:
+                // 40. Escribe un programa para imprimir todos los Números Fuertes del 1 al 100000.
+                // Corregir
+                int s1 = 0;
+                
+                for( int i=1; i<10000; i++){
+                    int sumFac = 1;
+                    for (int x=i; x>0; x--){
+                        sumFac = sumFac*i;
+                    }
+                    s1 += sumFac;
+                }
+                System.out.println(s1);
+                break;
+            case 41:
+                // 41. Escribe un programa para imprimir todos los Números Perfectos del 1 al 10000.
+                break;
+            case 42:
+                // 42. Escribe un programa para verificar si un número es un Número Perfecto o no.
+                break;
+            case 43:
+                // 43. Escribe un programa para imprimir todos los Números de Armstrong entre 1 y 1000.
+                break;
+            case 44:
+                // 44. Escribe un programa para verificar si un número es un Número de Armstrong o no.
+                break;
+            case 45:
+                // 45. Escribe un programa para imprimir los factores primos en Java.
                 break;
             default: 
                 System.out.println("Opcion invalida vuelva a intentarlo. ");
