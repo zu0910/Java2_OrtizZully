@@ -449,6 +449,19 @@ public class Ejercicios_OrtizZully {
             case 31:
                 // 31. Escribe un programa para convertir un número binario a decimal.
                 
+                System.out.println("Ingrese un numero binario: ");
+                String binario4 = teclado.nextLine();
+                
+                int decimal10 = 0;
+                int longi = binario4.length();
+                
+                for (int i=0; i < longi; i++){
+                    char bit= binario4.charAt(longi -1 -i);
+                    if (bit == '1'){
+                        decimal10 += Math.pow(2, i);
+                    }
+                }
+                System.out.println(decimal10);
                 
                 break;
             case 32:
@@ -465,56 +478,210 @@ public class Ejercicios_OrtizZully {
                 
                 // 33. Escribe un programa para convertir un número octal a binario.
                 
+                System.out.println("Por favor ingrese un numero octal: ");
+                String octal3 = teclado.nextLine();
+                int decimal11 = Integer.parseInt(octal3,8);
+                String binario5 = Integer.toBinaryString(decimal11);
+                System.out.println(binario5);
+                
                 break;
+                
             case 34:
                 
                 // 34. Escribe un programa para convertir un número octal a decimal.
+                
+                System.out.println("Por favor ingrese un numero octal: ");
+                String octal4 = teclado.nextLine();
+                int decimal12 = Integer.parseInt(octal4,8);
+                System.out.println(decimal12);
+                
                 break;
+                
             case 35:
                 
                 // 35. Escribe un programa para convertir un número octal a hexadecimal.
+                
+                System.out.println("Por favor ingrese un numero octal: ");
+                String octal5 = teclado.nextLine();
+                int decimal13 = Integer.parseInt(octal5,8);
+                String hexadecimal6 = Integer.toHexString(decimal13).toUpperCase();
+                System.out.println(hexadecimal6);
+                
                 break;
             case 36:
                 // 36. Escribe un programa para encontrar el complemento a 1 de un número en Java.
+                
+                System.out.println("Ingrese el numero del que quieres saber el complemento a 1");
+                n = teclado.nextInt();
+                teclado.nextLine();
+
+                    System.out.println("El complemento a 1 es: "+~n);
                 break;
             case 37:
-                // 37. Escribe un programa para encontrar el complemento a 2 de un número binario en Java.
+                // 37. Escribe un programa para encontrar el complemento a 2 de un número binario en Java
+                System.out.println("Ingresa un numero binario: ");
+                String n2 = teclado.nextLine();
+                int n3 = Integer.parseInt(n2, 2);
+                int com2 = ~n3 +1;
+                System.out.println(com2);
+
                 break;
                 
             case 38:
                 //38. Escribe un programa para imprimir la serie de Fibonacci hasta n términos.
+                
+                System.out.println("Ingrese la cantidad de terminos de la serie de Fibonacci: ");
+                
+                int n1 = teclado.nextInt();
+                
+                int primero = 0, segundo = 1;
+                
+                System.out.println("Serie de Fibonacci hasta " + n1 + "Terminos: ");
+                
+                for (int i=0; i<n1; i++){
+                    System.out.println(primero);
+                    int siguiente = primero + segundo;
+                    primero = segundo;
+                    segundo = siguiente;
+                }
                 break;
             case 39:
                 // 39. Escribe un programa para verificar si un número es un Número Fuerte o no.
+                
+                System.out.println("Ingrese un numero: ");
+                String num7 = teclado.nextLine();
+                
+                int s1 = 0;
+                
+                for( int i=0; i<num7.length(); i++){
+                    int sep = num7.charAt(i) - '0';
+                    
+                    int sumFac = 1;
+                    for (int x=sep; x>0; x--){
+                        sumFac = sumFac*x;
+                    }
+                    s1 += sumFac;
+                }
+                if (s1 == Integer.parseInt(num7)){
+                    System.out.println(num7 + "Es un numero fuerte.");
+                } else {
+                    System.out.println(num7 + "No es un numero fuerte.");
+                }
+                
                 break;
             case 40:
                 // 40. Escribe un programa para imprimir todos los Números Fuertes del 1 al 100000.
                 // Corregir
-                int s1 = 0;
+                System.out.println("Numeros Fuertes del 1 al 100000: ");
                 
-                for( int i=1; i<10000; i++){
-                    int sumFac = 1;
-                    for (int x=i; x>0; x--){
-                        sumFac = sumFac*i;
+                for (int num6 = 1; num6 <= 100000; num6++){
+                    int sumaFactores = 0, tem = num6;
+                    
+                    while(tem > 0){
+                        int digito = tem % 10;
+                        int factorial1 = 1;
+                        
+                        for (int i = 2; i<=digito; i++){
+                            factorial1 *= i;
+                        }
+                        
+                        sumaFactores += factorial1;
+                        tem /= 10;
                     }
-                    s1 += sumFac;
+                    
+                    if (sumaFactores == num6){
+                        System.out.println(num6);
+                    }
                 }
-                System.out.println(s1);
                 break;
             case 41:
                 // 41. Escribe un programa para imprimir todos los Números Perfectos del 1 al 10000.
+                
+                System.out.println("Numeros perfectos del 1 al 10000");
+                
+                for (int num6 = 1; num6 <= 10000; num6++){
+                    int suma5 = 0;
+                    for ( int i = 1; i <= num6 / 2; i++){
+                        if (num6 % 1 == 0){
+                            suma5 += i;
+                        }
+                    }
+                    if (suma5 == num6){
+                        System.out.println(num6);
+                    }
+                }
                 break;
             case 42:
                 // 42. Escribe un programa para verificar si un número es un Número Perfecto o no.
+                
+                System.out.println("Ingrese un numero: ");
+                int num8 = teclado.nextInt();
+                int suma6 = 0;
+                
+                for (int i = 1; i <= num8 / 2; i ++){
+                    if (num8 % i == 0){
+                        suma6 += i;
+                    }
+                }
+                if (suma6 == num8){
+                    System.out.println(num8 + "es un numero Perfecto.");
+                } else {
+                    System.out.println(num8 + "No es un numero perfecto.");
+                }
                 break;
             case 43:
                 // 43. Escribe un programa para imprimir todos los Números de Armstrong entre 1 y 1000.
+                
+                System.out.println("Numeros de Armstrong entre 1 y 1000");
+                
+                for (int num9 = 1; num9 <= 1000; num9++){
+                    int temp = num9, suma7 = 0, digitos2 = String.valueOf(num9).length();
+                    
+                    while (temp > 0){
+                        int digito1 = temp % 10;
+                        suma7 += Math.pow(digito1, digitos2);
+                        temp /= 10;
+                    }
+                    if (suma7 == num9){
+                        System.out.println(num9);
+                    }
+                }
                 break;
             case 44:
                 // 44. Escribe un programa para verificar si un número es un Número de Armstrong o no.
+                
+                System.out.println("Ingrese un numero: ");
+                int num10 = teclado.nextInt();
+                
+                int temp1 = num10, suma8 = 0, digitos3 = String.valueOf(num10).length();
+                
+                
+                while (temp1 > 0){
+                    int digito2 = temp1 % 10;
+                    suma8 += Math.pow(digito2, digitos3);
+                    temp1 /= 10;
+                }
+                if (suma8 == num10){
+                    System.out.println(num10 + "es un numero Armstrong.");
+                }else {
+                    System.out.println(num10 + "No es un numero Armstrong.");
+                }
+                
+                
                 break;
             case 45:
                 // 45. Escribe un programa para imprimir los factores primos en Java.
+                
+                System.out.println("Ingrese un numero: ");
+                int num11 = teclado.nextInt();
+                
+                for (int i = 2; i <= num11; i++){
+                    while(num11 % i == 0){
+                        System.out.println(i);
+                        num11 /= i;
+                    }
+                }
+                System.out.println(num11);
                 break;
             default: 
                 System.out.println("Opcion invalida vuelva a intentarlo. ");
