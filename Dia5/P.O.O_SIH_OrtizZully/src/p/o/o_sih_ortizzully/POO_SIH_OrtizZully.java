@@ -131,7 +131,7 @@ public class POO_SIH_OrtizZully {
 
                     System.out.print("Ingrese el ID de la Persona: ");
                     int idPersona1 = teclado.nextInt();
-                    teclado.nextLine(); // Limpiar buffer
+                    teclado.nextLine(); 
 
                     System.out.print("Ingrese la Fecha de Nacimiento (YYYY-MM-DD): ");
                     String fechaNacimiento = teclado.nextLine();
@@ -150,10 +150,10 @@ public class POO_SIH_OrtizZully {
                     int idHospital1 = teclado.nextInt();
                     teclado.nextLine(); // Limpiar buffer
 
-                    // Agregar paciente a la lista con el ID correcto
+                    
                     ListaPaciente.add(new Paciente(fechaNacimiento, fechaIngreso, diagnostico, pabellon, idHospital1, idPersona1, nombreCompleto1, direccion1));
 
-                    System.out.println("✅ Paciente agregado exitosamente.");
+                    System.out.println("Paciente agregado exitosamente.");
                     break;
                     
                 case 5:
