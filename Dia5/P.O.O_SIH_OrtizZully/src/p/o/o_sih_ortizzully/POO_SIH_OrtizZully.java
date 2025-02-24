@@ -23,6 +23,11 @@ public class POO_SIH_OrtizZully {
          
          ArrayList<Personal> ListaPersonal = new ArrayList<>();
          ArrayList<Paciente> ListaPaciente = new ArrayList<>();
+         ArrayList<Departamento> ListaDepartamento = new ArrayList<>();
+         ArrayList<Doctor> ListaDoctor = new ArrayList<>();
+         ArrayList<Hospital> ListaHospital = new ArrayList<>();
+         ArrayList<EquipoMedico> ListaEquipoMedico = new ArrayList<>();
+         ArrayList<Pabellon> ListaPabellon = new ArrayList<>();
          
         boolean salir = false;
         
@@ -31,9 +36,13 @@ public class POO_SIH_OrtizZully {
             System.out.println("1). Agregar personal. ");
             System.out.println("2). Mostrar personal.");
             System.out.println("3). Eliminar personal");
-            System.out.println("4). Agregar paciente.");
-            System.out.println("5). Mostrar paciente.");
-            System.out.println("6). Eliminar un paciente.");
+            System.out.println("4). Actualizar personal");
+            System.out.println("5). Agregar paciente.");
+            System.out.println("6). Mostrar paciente.");
+            System.out.println("7). Eliminar un paciente.");
+            System.out.println("8). Actualizar paciente.");
+            System.out.println("9). Agregar doctor.");
+            System.out.println("10). Mostrar doctor.");
             System.out.println("0). Salir.");
             System.out.println("------------------------------------------------------");
             System.out.println("Ingrese unas de las opciones del menu: ");
@@ -118,8 +127,49 @@ public class POO_SIH_OrtizZully {
                     
                     
                     break;
+                    
+                case 4:
+                    System.out.println("Actualizar personal");
+                    
+                    boolean terminar = false;
+                    
+                    while (terminar == false){
+                        System.out.println("Que informacion deseas eliminar: ");
+                        System.out.println("1). Nombre.");
+                        System.out.println("2). Dirección. ");
+                        System.out.println("3). Tipo de personal. ");
+                        System.out.println("4). Salario");
+                        System.out.println("0). Volver al menu principal.");
+                        
+                        int opc1 = teclado.nextInt();
+                        
+                        switch(opc1){
+                            case 1:
+                                System.out.println("Ingrese el nuevo nombre completo.");
+                                String NewNomComp = teclado.nextLine();
+                                ListaPersonal.nombre_completo = NewNomComp;
+                                break;
+                            case 2:
+                                System.out.println("Ingrese la nueva direccion.");
+                                String NewDireccion = teclado.nextLine();
+                                break;
+                            case 3:
+                                System.out.println("Ingrese el nuevo personal.");
+                                String NewPersonal = teclado.nextLine();
+                                break;
+                            case 4:
+                                System.out.println("Ingrese el nuevo salario.");
+                                double newSalario = teclado.nextDouble();
+                                break;
+                            case 0:
+                                salir = true;
+                                break;
+                        }
+                        
+                    }
+                    break;
                
-                case 4: 
+                case 5: 
             
                     System.out.println("-------------- AGREGAR PACIENTE ---------");
 
@@ -156,7 +206,7 @@ public class POO_SIH_OrtizZully {
                     System.out.println("Paciente agregado exitosamente.");
                     break;
                     
-                case 5:
+                case 6:
                     
                     if(ListaPaciente.isEmpty()){
                         System.out.println("No hay Paciente registrado.");
@@ -169,7 +219,7 @@ public class POO_SIH_OrtizZully {
                     
                     break;
                 
-                case 6: 
+                case 7: 
                     System.out.println("Eliminar Paciente");
                     
                     if (ListaPaciente.isEmpty()){
@@ -194,6 +244,15 @@ public class POO_SIH_OrtizZully {
                             System.out.println("No se encontro un paciente con ese ID");
                         }
                     }
+                    break;
+                    
+                case 8:
+                    break;
+                    
+                case 9:
+                    break;
+                    
+                case 10:
                     break;
                 case 0:
                     salir = true;
