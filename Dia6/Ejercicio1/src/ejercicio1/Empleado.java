@@ -4,10 +4,6 @@
  */
 package ejercicio1;
 
-/**
- *
- * @author Uniminuto Tibu
- */
 public class Empleado {
     
     // Atributos privados

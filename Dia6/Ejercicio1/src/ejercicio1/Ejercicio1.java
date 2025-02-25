@@ -4,10 +4,6 @@
  */
 package ejercicio1;
 
-/**
- *
- * @author Uniminuto Tibu
- */
 public class Ejercicio1 {
 
     
