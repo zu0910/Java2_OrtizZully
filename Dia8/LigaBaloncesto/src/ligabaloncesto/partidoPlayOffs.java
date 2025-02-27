@@ -37,7 +37,7 @@ public class partidoPlayOffs extends Partido{
     
     @Override
     public String ObtenerInfo() {
-       return "Partido de PlayOffs - Ronda: " + ronda +
+       return "Partido de PlayOffs - Ronda: " + ronda + " \n " +
         super.ObtenerInfo();
     }
     

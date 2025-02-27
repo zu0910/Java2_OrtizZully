@@ -91,11 +91,11 @@ public class Partido {
     
     public String ObtenerInfo(){
         return "--------------------------------------" +
-                "Equipo local: " + equipoLocal +
-                "Equipo visitante: " + equipoVisitante +
-                "Cestas del equipo local: " + cestasEquipoLocal +
-                "Cesta del equipo visitante: " + cestaEquipoVisitante + 
-                "Estado del partido: " + obtenerEstadoPartido() +
+                "Equipo local: " + equipoLocal + " \n " +
+                "Equipo visitante: " + equipoVisitante + " \n " +
+                "Cestas del equipo local: " + cestasEquipoLocal + " \n " +
+                "Cesta del equipo visitante: " + cestaEquipoVisitante + " \n " + 
+                "Estado del partido: " + obtenerEstadoPartido() + " \n " +
                 "Fecha de partido: " + fechaPartido;
     }
     

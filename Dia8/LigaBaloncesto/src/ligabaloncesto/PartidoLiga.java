@@ -26,7 +26,7 @@ public class PartidoLiga extends Partido{
 
     @Override
     public String ObtenerInfo() {
-        return "Partido de Liga - Jornada " + numeroJornada +
+        return "Partido de Liga - Jornada " + numeroJornada + " \n " +
         super.ObtenerInfo(); 
     }
     
