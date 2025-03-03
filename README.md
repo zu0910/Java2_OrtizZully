@@ -4,14 +4,14 @@ Este repositorio contiene diversos proyectos y ejercicios en Java, Organizados e
 
 ## Contenido 
 
-📂 Dia3
+* 📂 Dia3
 ---
  
 | 🔹 Proyecto | 📜 Descripción |
 |--------|-----------|
 |**Ejercicios_OrtizZullyJava**| Consta de 45 ejercicios la cual cada ejercicio resuelve un problema especifico|
 ---
-📂 Dia5
+* 📂 Dia5
 ---
 | 🔹 Proyecto | 📜 Descripción |
 |--------|-----------|
