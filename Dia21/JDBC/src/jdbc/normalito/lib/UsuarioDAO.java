@@ -77,4 +77,41 @@ public class UsuarioDAO {
         }
     }
     
+    // Listar persona por id 
+     public void listarPersona(){
+       String sql = "SELECT * FROM Persona";
+       try(Connection conexionInterna = conectar();
+            PreparedStatement solicitud = conexionInterna.prepareStatement(sql);
+            ResultSet resultado = solicitud.executeQuery()){
+           while (resultado.next()){
+               System.out.println("ID: " + resultado.getInt("id") +
+                       ", Nombre: " + resultado.getString("nombre") +
+                       ", Email: " + resultado.getString("Email"));
+           }
+       } catch (SQLException ex){
+           System.out.println("Lo siento no se puede mostrar las personas :(");
+           ex.printStackTrace();
+       }
+    }
+     
+     // Eliminar una persona 
+    
+    public void EliminarPersona(int id){
+        String sql = "DELETE FROM Persona WHERE id = ?";
+        try(Connection conexionInterna = conectar();
+            PreparedStatement solicitud = conexionInterna.prepareStatement(sql)) {
+            solicitud.setInt(1, id);
+            int filas = solicitud.executeUpdate();
+            
+            if (filas > 0){
+                System.out.println("El proceso de eliminacion del usuario ha sido un exito");
+            }else {
+                System.out.println("Ups lo siento el id "+ id +" del usuario no se encontró.");
+            }
+        }catch (SQLException ex){
+                System.out.println("ups error al eliminar la persona :sadface: ");
+                ex.printStackTrace();
+        }
+    }
+    
 }
