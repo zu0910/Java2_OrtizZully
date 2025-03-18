@@ -25,8 +25,11 @@ public class JDBC {
         for (String usuario: ListaUsuarios){
             System.out.println(usuario);
         }
-        
+        /*
         usuarioDAO.actualizarUsuario(1, "Jaime", "jaime@campuslands.com");
+        
+        usuarioDAO.listarUsuario(1);*/
+        //usuarioDAO.EliminarUsuario(5);
         
         
     }

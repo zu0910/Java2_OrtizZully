@@ -78,26 +78,27 @@ public class UsuarioDAO {
     }
     
     // Listar persona por id 
-     public void listarPersona(){
-       String sql = "SELECT * FROM Persona";
-       try(Connection conexionInterna = conectar();
-            PreparedStatement solicitud = conexionInterna.prepareStatement(sql);
-            ResultSet resultado = solicitud.executeQuery()){
-           while (resultado.next()){
+     public void listarUsuario(int id){
+       String sql = "SELECT * FROM usuarios WHERE id=?";
+       try (Connection conexionInterna = conectar();
+            PreparedStatement solicitud = conexionInterna.prepareStatement(sql)){
+            solicitud.setInt(1, id);
+            ResultSet resultado = solicitud.executeQuery();
+           if (resultado.next()){
                System.out.println("ID: " + resultado.getInt("id") +
                        ", Nombre: " + resultado.getString("nombre") +
                        ", Email: " + resultado.getString("Email"));
            }
        } catch (SQLException ex){
-           System.out.println("Lo siento no se puede mostrar las personas :(");
+           System.out.println("Lo siento no se puede mostrar el usuario :(");
            ex.printStackTrace();
        }
     }
      
      // Eliminar una persona 
     
-    public void EliminarPersona(int id){
-        String sql = "DELETE FROM Persona WHERE id = ?";
+    public void EliminarUsuario(int id){
+        String sql = "DELETE FROM usuarios WHERE id = ?";
         try(Connection conexionInterna = conectar();
             PreparedStatement solicitud = conexionInterna.prepareStatement(sql)) {
             solicitud.setInt(1, id);
@@ -109,7 +110,7 @@ public class UsuarioDAO {
                 System.out.println("Ups lo siento el id "+ id +" del usuario no se encontró.");
             }
         }catch (SQLException ex){
-                System.out.println("ups error al eliminar la persona :sadface: ");
+                System.out.println("ups error al eliminar el usuario :sadface: ");
                 ex.printStackTrace();
         }
     }
