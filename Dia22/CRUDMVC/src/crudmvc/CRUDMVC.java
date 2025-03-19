@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package crudmvc;
 
-/**
- *
- * @author Uniminuto Tibu
- */
+import Controlador.CtrlUsuario;
+import Modelo.ConsultasUsuario;
+import Modelo.Usuario;
+import Vista.frmUsuario;
+
 public class CRUDMVC {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        Usuario mod = new Usuario();
+        ConsultasUsuario modC = new ConsultasUsuario();
+        frmUsuario frm = new frmUsuario();
+        
+        CtrlUsuario ctrl = new CtrlUsuario(mod,modC, frm);
+        ctrl.iniciar();
+        
+        frm.setVisible(true);
     }
     
 }
