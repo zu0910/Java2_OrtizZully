@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author const
@@ -72,28 +74,30 @@ public class ConsultasUsuario extends Conexion{
         }
     }
     
-    public boolean buscar(Usuario usu) {
+    public List<Usuario> buscar() {
+        List<Usuario> lista = new ArrayList<>();
+        
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = getConexion();
 
-        String sql = "SELECT * FROM usuarios WHERE id=? ";
+        String sql = "SELECT * FROM usuarios ";
 
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(1, usu.getId());
             rs = ps.executeQuery();
 
-            if (rs.next()) {
-                usu.setId(Integer.parseInt(rs.getString("id")));
+            while (rs.next()) {
+                Usuario usu = new Usuario();
+                usu.setId(rs.getInt("id"));
                 usu.setNombre(rs.getString("nombre"));
                 usu.setEmail(rs.getString("email"));
-                return true;
+                lista.add(usu);
             }
-            return false;
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         }
+        return lista;
     }
 }

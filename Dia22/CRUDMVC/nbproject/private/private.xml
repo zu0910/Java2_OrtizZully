@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/const/OneDrive/Documentos/Zully%20Programacion/Java2_OrtizZully/Dia22/CRUDMVC/src/Modelo/Usuario.java</file>
-            <file>file:/C:/Users/const/OneDrive/Documentos/Zully%20Programacion/Java2_OrtizZully/Dia22/CRUDMVC/src/Modelo/ConsultasUsuario.java</file>
-            <file>file:/C:/Users/const/OneDrive/Documentos/Zully%20Programacion/Java2_OrtizZully/Dia22/CRUDMVC/src/Modelo/Conexion.java</file>
-            <file>file:/C:/Users/const/OneDrive/Documentos/Zully%20Programacion/Java2_OrtizZully/Dia22/CRUDMVC/src/Vista/frmUsuario.java</file>
+            <file>file:/C:/Users/Uniminuto%20Tibu/Documents/Zully/Java2_OrtizZully/Dia22/CRUDMVC/src/Modelo/ConsultasUsuario.java</file>
+            <file>file:/C:/Users/Uniminuto%20Tibu/Documents/Zully/Java2_OrtizZully/Dia22/CRUDMVC/src/Controlador/CtrlUsuario.java</file>
+            <file>file:/C:/Users/Uniminuto%20Tibu/Documents/Zully/Java2_OrtizZully/Dia22/CRUDMVC/src/Modelo/Conexion.java</file>
+            <file>file:/C:/Users/Uniminuto%20Tibu/Documents/Zully/Java2_OrtizZully/Dia22/CRUDMVC/src/Vista/frmUsuario.java</file>
+            <file>file:/C:/Users/Uniminuto%20Tibu/Documents/Zully/Java2_OrtizZully/Dia22/CRUDMVC/src/Modelo/Usuario.java</file>
+            <file>file:/C:/Users/Uniminuto%20Tibu/Documents/Zully/Java2_OrtizZully/Dia22/CRUDMVC/src/crudmvc/CRUDMVC.java</file>
         </group>
     </open-files>
 </project-private>

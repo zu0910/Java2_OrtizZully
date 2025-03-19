@@ -6,13 +6,18 @@ import Modelo.Usuario;
 import Vista.frmUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 
 public class CtrlUsuario implements ActionListener{
     private Usuario mod;
     private ConsultasUsuario modC;
-    private frmUsuario frm;
+    private frmUsuario frm =new frmUsuario() ;
+    DefaultTableModel model = new DefaultTableModel();
+
 
     public CtrlUsuario(Usuario mod, ConsultasUsuario modC, frmUsuario frm) {
         this.mod = mod;
@@ -71,19 +76,9 @@ public class CtrlUsuario implements ActionListener{
             }
         }
         if(e.getSource() == frm.btnListar){
-            mod.setId(Integer.parseInt(frm.txtID.getText()));
             
+            listar(frm.tabla);
             
-            if(modC.buscar(mod)){
-                frm.txtID.setText(String.valueOf(mod.getId()));
-                frm.txtNombre.setText(String.valueOf(mod.getNombre()));
-                frm.txtEmail.setText(String.valueOf(mod.getEmail()));
-                
-               
-            }else{
-                JOptionPane.showMessageDialog(null, "No se encontro");
-                limpiar();
-            }
         }
     }
 
@@ -91,6 +86,29 @@ public class CtrlUsuario implements ActionListener{
         frm.txtID.setText(null);
         frm.txtNombre.setText(null);
         frm.txtEmail.setText(null);
+    }
+    
+    private void listar(JTable table){
+        model = (DefaultTableModel)table.getModel();
+        model.setRowCount(0);
+        List<Usuario> lista = new ArrayList<>();
+        try{
+            lista = modC.buscar();
+            
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(frm, "Error al listar" + e.getMessage());
+        }
+        
+        Object[] objeto = new Object[3];
+        for (int i=0; i<lista.size(); i++){
+            objeto[0] = lista.get(i).getId();
+            objeto[1] = lista.get(i).getNombre();
+            objeto[2] = lista.get(i).getEmail();
+            model.addRow(objeto);
+            
+        }
+        frm.tabla.setModel(model);
     }
     
 }
